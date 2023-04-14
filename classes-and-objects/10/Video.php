@@ -32,7 +32,7 @@ public function getCheckedOut(): bool
 {
     return $this->isCheckedOut;
 }
-public function getReceivedRating(int $rate): void
+public function getRating(int $rate): void
 {
     $this->ratings[] = $rate;
 }

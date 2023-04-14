@@ -3,10 +3,9 @@ require_once 'Video.php';
 class VideoStore
 {
 private array $videos;
-public function  add(string $title): void
+public function  add(Video $title): void
 {
-    $video = new Video($title);
-    $this->videos[] = $video;
+    $this->videos[] = $title;
 }
 public function checkOut(string $title): bool
 {

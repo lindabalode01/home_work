@@ -38,15 +38,24 @@ class Application
     }
     public function addMovies(){
         $movieName = readline('Enter the name of the movie you would like to add: ');
-        $this->videostore->add($movieName);
+        $this->videostore->add(new Video($movieName));
     }
     public function rentVideo(){
-
+        $movieForRent = readline('Enter the name of movie you would like to rent: ');
+        if($this->videostore->checkOut($movieForRent))
+        {
+            echo 'You rented '.$movieForRent.PHP_EOL;
+        }
+        echo 'This movie is not in our inventory'.PHP_EOL;
 }
 public function listInventory(){
 
 }
 public function returnVideo(){
+    $movieTitle = readline('Enter name of movie to rate: ');
+    $rating = readline('Enter your rating: ');
+    if($this->videostore->getRating($movieTitle, $rating)){
 
+    }
 }
 }
