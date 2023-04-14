@@ -25,7 +25,7 @@ public function returnVideo(string $title):bool
         /** @var Video $video    */
         if($video->getTitle() == $title && $video->getCheckedOut() )
         {
-
+            $video->return();
         }
 
     }

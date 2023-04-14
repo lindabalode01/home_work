@@ -1,7 +1,8 @@
 <?php
-
+require_once 'VideoStore.php';
 class Application
 {
+    public VideoStore $videostore;
     public function run(): void
     {
         while (true) {
@@ -36,7 +37,8 @@ class Application
         }
     }
     public function addMovies(){
-
+        $movieName = readline('Enter the name of the movie you would like to add: ');
+        $this->videostore->add($movieName);
     }
     public function rentVideo(){
 
