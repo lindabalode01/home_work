@@ -16,7 +16,7 @@ public function checkOut(): void
 {
     $this->isCheckedOut = true;
 }
-public function getAvarageRaiting(): string
+public function getAvarageRating(): string
 {
     return array_sum($this->ratings) / count($this->ratings);
 }

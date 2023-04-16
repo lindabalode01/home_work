@@ -1,12 +1,15 @@
 <?php
-require_once 'Movie.php';
+require_once 'MovieStorage.php';
 
-$movie1 = new Movie("Casino Royale", "Eon Productions", "PG-13");
-$movie2 = new Movie("Glass", "Buena Vista International", "PG-13");
-$movie3 = new Movie("Spider-Man: Into the Spider-Verse", "Columbia Pictures", "PG");
+$movies = new MovieStorage([
+    new Movie("Casino Royale", "Eon Productions", "PG-13"),
+    new Movie("Glass", "Buena Vista International", "PG-13"),
+    new Movie("Spider-Man: Into the Spider-Verse", "Columbia Pictures", "PG")
+]);
+$pgMovies = $movies->getPg('PG');
+foreach ($pgMovies as $movie){
+    echo $movie->getTitle().PHP_EOL;
+}
 
-$movies = [$movie1, $movie2, $movie3];
-$pgMovies = new Movie('Cat', 'Warner', 'PG - 12');
-echo $pgMovies->getPg($movies);
 
 

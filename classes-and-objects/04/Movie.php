@@ -10,14 +10,13 @@ class Movie {
         $this->studio = $studio;
         $this->rating = $rating;
     }
-
-    public function getPg(array $movies) : array {
-        $pg = [];
-        foreach ($movies as $movie) {
-            if ($movie->rating == "PG") {
-                $pg[] = $movie;
-            }
-        }
-        return $pg;
+    public function getRating():string{
+        return $this->rating;
     }
+    public function getTitle():string{
+        return $this->title;
+    }
+    public function getStudio():string{
+        return $this->studio;
+}
 }

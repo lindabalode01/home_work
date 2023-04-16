@@ -48,14 +48,14 @@ class Application
         }
         echo 'This movie is not in our inventory'.PHP_EOL;
 }
-public function listInventory(){
-
-}
+//public function listInventory(){
+//
+//}
 public function returnVideo(){
-    $movieTitle = readline('Enter name of movie to rate: ');
-    $rating = readline('Enter your rating: ');
-    if($this->videostore->getRating($movieTitle, $rating)){
-
+    $movieToReturn = readline('Enter the name of movie you want to return: ');
+    if(!$this->videostore->checkOut($movieToReturn)){
+        echo 'You returned: '.$movieToReturn;
     }
+
 }
 }
